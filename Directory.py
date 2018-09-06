@@ -16,9 +16,3 @@ class Directory:
             if not os.path.isdir(path):
                 files.append(path)
         return files
-
-
-if __name__ == "__main__":
-    d = Directory("./")
-    for item in d.items():
-        print(item, os.path.isdir(item))

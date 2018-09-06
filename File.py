@@ -20,8 +20,3 @@ class File:
     def last_modified(self):
         unix_time = int(os.path.getmtime(self.path))
         return datetime.fromtimestamp(unix_time)
-
-
-if __name__ == "__main__":
-    f = File("./test.txt")
-    print(f.remove())

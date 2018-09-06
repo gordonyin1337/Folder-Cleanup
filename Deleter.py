@@ -27,16 +27,15 @@ class Deleter:
         for item in directory.items():
             file = File(item)
             if self.check_last_modified(file) and self.check_file_type(file):
+                print("Deleting Files...")
                 removed.append(file.filename)
-                print("Removing: " + str(file))
+                file.remove()
         print("Cleanup Finished!")
+        print("Files Removed:")
+        for file in removed:
+            print(file)
 
 
 def get_datetime(datetime_string):
     datetime_object = datetime.strptime(datetime_string, '%b %d %Y %I:%M%p')
     return datetime_object
-
-
-if __name__ == "__main__":
-    deleter = Deleter("./Things", [], "Apr 1 2018 12:00PM")
-    deleter.run_deleter()
