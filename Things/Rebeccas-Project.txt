@@ -1,0 +1,7 @@
+"""Write a function that returns the string if it is longer than 5 letters or shorter than 3 letters"""
+def print_length(string):
+
+if len(string) > 5 or len(string) < 3:
+return string
+else:
+return "I love Becca"
